@@ -57,7 +57,7 @@ class yapp_packet extends uvm_sequence_item;
   endfunction
  
   // Restricts length to fit within the protocol's 6-bit hardware limits
-  constraint payload_length { length inside {[0:63]}; }
+  constraint payload_length { length inside {[1:63]}; }
   
   // Synchronizes the physical layout size of the array to match the header length
   constraint payload_size   { payload.size() == length; }
